@@ -1,1 +1,13 @@
 language: go
+go:
+- tip
+script:
+- go build -o bin/supervisord -i .
+deploy:
+  provider: releases
+  api_key:
+    secure: VafBFi12cxYhGvOUsdLlY+6Tnb9xCtKWbX/7+Sz44SA0yrbvOmzzL8kx9ysc7I77fwR9LmF33oUBVfrsPZ90C+3OWETGp5aQ0/IQm0UhiPsDJDnpsFrd54heEXSKF6ujDdqDSrIy8gBu9OspaaRmuy3lcUFet8ZWbSZR8L+lYw6GnE6YkWL7g0BtGoeX1IpuPu3D92WoJuqCfICc/9s1I8kN4lm2XiBxCIXyCobFD7i1FqWsvXagG361Vyy/65jDfykYzWNHPlBWfwa2tKigrFyxEkW01TCALGZt03sVHoxNJQvfEGOFBuYC/AsSnuIkm+a4kslw32LrgTY3IZQpCBY5ABJB2Mm5n+KDZFejK2H341Yg7U3YQTP8fnUwqzk6K1NJGGQyfLAWp/Y/izBtcolI7+5Y14W2wlWbP4CBPNZGQxgKPGXWquht8VRcyEOWBLauycRub9xqamVXWm6qrjTj8ZxyEGj60NflfG0dt8VmYZzrIUJwG5U9Z/ERzrRS3bTw1TPx6FNNu4ii6ucisiPBbq5fRMD3fuHDSY9jtOt93fOEqX9e+xei2uEkBhxW/snJeytiMnpyyjEaUNojdIiWPcl5jYn+XSzgEV3351fn/u78sZhlQ/XY5itvbpKUFHNNIxzHWsv1B5hGYqA+KMNSlVrJ7hxRaQOF8I4bpnc=
+  file: bin/supervisord
+  on:
+    repo: Rbeuque74/supervisord
+    branch: travis
