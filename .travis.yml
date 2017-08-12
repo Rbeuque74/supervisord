@@ -3,6 +3,10 @@ go:
 - tip
 script:
 - go build -o bin/supervisord -i .
+- pwd
+- ls -lahF
+- ls -lahF bin
+- stat bin/supervisord
 deploy:
   provider: releases
   api_key:
